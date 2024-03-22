@@ -11,5 +11,6 @@ namespace WinFormsApp1
         public Image pic4 = Properties.Resources._4;
         public Image pic5 = Properties.Resources._5;
         public Image pic6 = Properties.Resources._6;
+
     }
 }

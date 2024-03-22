@@ -4,15 +4,20 @@ namespace WinFormsApp1
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
+
             hide();
             buttonblackaction.Hide();
             buttonblackdrama.Hide();
+
         }
         Drama drama = new Drama();
         Action action = new Action();
+        CsvWriter csv = new CsvWriter();
+        int[] count = new int[6];
         public void showaction()
         {
             ButtonREAD1.Show();
@@ -34,6 +39,10 @@ namespace WinFormsApp1
             ButtonREAD5.Hide();
             ButtonREAD6.Hide();
         }
+
+
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -72,31 +81,36 @@ namespace WinFormsApp1
 
         private void ButtonREAD1_Click(object sender, EventArgs e)
         {
-            
 
-                Background.Image = action.pic1;
-                hide();
-                buttonblackaction.Show();
 
-        }   
+            Background.Image = action.pic1;
+            count[0]++;
+            hide();
+            buttonblackaction.Show();
+
+
+        }
 
         private void ButtonREAD2_Click(object sender, EventArgs e)
         {
-                Background.Image = action.pic2;
-                hide();
-                buttonblackaction.Show();
-            
+            Background.Image = action.pic2;
+            count[1]++;
+            hide();
+            buttonblackaction.Show();
+
         }
 
         private void ButtonREAD3_Click(object sender, EventArgs e)
         {
-                Background.Image = action.pic3;
-                hide();
-                buttonblackaction.Show();
+            Background.Image = action.pic3;
+            count[2]++;
+            hide();
+            buttonblackaction.Show();
         }
         private void ButtonREAD6_Click(object sender, EventArgs e)
         {
             Background.Image = drama.pic6;
+            count[3]++;
             hide();
             buttonblackdrama.Show();
         }
@@ -104,6 +118,7 @@ namespace WinFormsApp1
         private void ButtonREAD5_Click(object sender, EventArgs e)
         {
             Background.Image = drama.pic5;
+            count[4]++;
             hide();
 
             buttonblackdrama.Show();
@@ -112,6 +127,7 @@ namespace WinFormsApp1
         private void ButtonREAD4_Click(object sender, EventArgs e)
         {
             Background.Image = drama.pic4;
+            count[5]++;
             hide();
 
             buttonblackdrama.Show();
@@ -132,6 +148,32 @@ namespace WinFormsApp1
             buttonblackaction.Hide();
             buttonblackdrama.Hide();
 
+        }
+
+        private void CSV_Click(object sender, EventArgs e)
+        {
+            bool canWrite = csv.WriteToCsv(count);
+            if (canWrite)
+            {
+                MessageBox.Show("เขียนไฟล์สำเร็จ");
+            }
+            else
+            {
+                MessageBox.Show("เขียนไฟล์ไม่สำเร็จ");
+            }
+        }
+
+        private void ReadCSV_Click(object sender, EventArgs e)
+        {
+            bool canRead = csv.ReadFile();
+            if (canRead)
+            {
+                MessageBox.Show("อ่านไฟล์สำเร็จ");
+            }
+            else
+            {
+                MessageBox.Show("อ่านไฟล์ไม่สำเร็จ");
+            }
         }
     }
 }

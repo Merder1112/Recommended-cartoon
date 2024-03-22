@@ -41,6 +41,8 @@
             ButtonREAD4 = new Button();
             buttonblackaction = new Button();
             buttonblackdrama = new Button();
+            CSV = new Button();
+            ReadCSV = new Button();
             ((System.ComponentModel.ISupportInitialize)Background).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureMain).BeginInit();
             SuspendLayout();
@@ -181,11 +183,33 @@
             buttonblackdrama.UseVisualStyleBackColor = false;
             buttonblackdrama.Click += buttonblackdrama_Click;
             // 
+            // CSV
+            // 
+            CSV.Location = new Point(640, 471);
+            CSV.Name = "CSV";
+            CSV.Size = new Size(94, 29);
+            CSV.TabIndex = 12;
+            CSV.Text = "save CSV";
+            CSV.UseVisualStyleBackColor = true;
+            CSV.Click += CSV_Click;
+            // 
+            // ReadCSV
+            // 
+            ReadCSV.Location = new Point(767, 471);
+            ReadCSV.Name = "ReadCSV";
+            ReadCSV.Size = new Size(94, 29);
+            ReadCSV.TabIndex = 12;
+            ReadCSV.Text = "Read CSV";
+            ReadCSV.UseVisualStyleBackColor = true;
+            ReadCSV.Click += ReadCSV_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(895, 512);
+            Controls.Add(ReadCSV);
+            Controls.Add(CSV);
             Controls.Add(buttonblackdrama);
             Controls.Add(buttonblackaction);
             Controls.Add(ButtonREAD4);
@@ -219,5 +243,7 @@
         private Button ButtonREAD4;
         private Button buttonblackaction;
         private Button buttonblackdrama;
+        private Button CSV;
+        private Button ReadCSV;
     }
 }

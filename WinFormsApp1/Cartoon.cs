@@ -11,6 +11,7 @@ namespace WinFormsApp1
         protected string Lineart;
         protected string type;
         protected string name;
+        private int efm;
 
         public virtual int Get_high()
         {
