@@ -3,7 +3,15 @@
 วัตถุประสงค์ของโปรแกรม : ผมอยากจะแนะนำอนิเมะเพื่อให้คนอื่นได้ผ่านชั่วเวลาที่เลวร้ายสำหรับใครบางคนได้
 
 โครงสร้างของโปรแกรม (Class diagram) ของโปรแกรม ใช้ Mermaid ในการเขียน : 
+
 ```mermaid
+classDiagram
+    Form1 -- CsvWriter
+    Form1 -- Action
+    Form1 -- Drama
+    Action --> Cartoon
+    Drama --> Cartoon
+
 class Form1 {
         -ButtonREAD1_Click()
         -ButtonREAD2_Click()
@@ -41,12 +49,6 @@ class Form1 {
         -efm: int
         +Get_high(): int
     }
-
-    Form1 -- CsvWriter
-    Form1 -- Action
-    Form1 -- Drama
-    Action --> Cartoon
-    Drama --> Cartoon
 ```
 
 ชื่อของผู้พัฒนาโปรแกรม : นายจิรกิตติ์ โลหะวาทิน 
